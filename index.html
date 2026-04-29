@@ -38,6 +38,15 @@ header::before {
 header h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,5vw,50px); font-weight:300; color:#fff; letter-spacing:0.12em; position:relative; }
 header h1 span { color:var(--gold); font-style:italic; }
 header p { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold-light); margin-top:10px; font-weight:300; position:relative; }
+.how-to-bar {
+  background: rgba(201,169,110,0.08); border-top:1px solid rgba(201,169,110,0.2);
+  border-bottom:1px solid rgba(201,169,110,0.2);
+  padding:14px 32px; text-align:center;
+}
+.how-to-bar p {
+  font-size:12px; color:var(--text); line-height:1.7; font-weight:400; max-width:860px; margin:0 auto;
+}
+.how-to-bar strong { color:var(--dark); font-weight:700; }
 .tab-nav {
   display:flex; background:var(--dark); border-top:1px solid rgba(255,255,255,0.08);
   overflow-x:auto; padding:0 24px;
@@ -51,6 +60,396 @@ header p { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; colo
 }
 .tab-btn:hover { color:var(--gold-light); }
 .tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
+.section { display:none; }
+.section.active { display:block; }
+.wrap { max-width:1100px; margin:0 auto; padding:0 24px; }
+.section-heading {
+  font-family:'Cormorant Garamond',serif; font-size:clamp(22px,3vw,34px);
+  font-weight:300; color:var(--dark); letter-spacing:0.08em;
+  padding:40px 0 6px;
+}
+.section-heading span { color:var(--gold); font-style:italic; }
+.section-sub { font-size:13px; color:var(--mid); font-weight:300; line-height:1.7; padding-bottom:28px; }
+.gold-rule { height:1px; background:linear-gradient(90deg,var(--gold),transparent); margin-bottom:32px; }
+.legend {
+  display:flex; justify-content:center; gap:28px;
+  padding:20px 40px; background:var(--warm-white);
+  border-bottom:1px solid var(--border); flex-wrap:wrap;
+}
+.legend-item { display:flex; align-items:center; gap:10px; font-size:13px; font-weight:500; }
+.dev-badge { display:inline-flex; align-items:center; justify-content:center; width:36px; height:20px; border-radius:3px; font-size:10px; font-weight:600; }
+.dev-13 { background:#E8D5B0; color:#5C3D1A; }
+.dev-3  { background:#8B5E3C; color:#FAF6F0; }
+.table-wrap { overflow-x:auto; padding-bottom:60px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+thead tr th {
+  padding:13px 14px; text-align:center; font-size:10px;
+  letter-spacing:0.18em; text-transform:uppercase; font-weight:600;
+  color:var(--dark); background:var(--warm-white);
+  border-bottom:2px solid var(--gold); white-space:nowrap;
+}
+thead tr th:first-child { text-align:left; }
+th.dev-header-13 { background:var(--dev13-bg); color:var(--dev13-text); }
+th.dev-header-3  { background:var(--dev3-bg);  color:var(--dev3-text); }
+.group-row td {
+  padding:18px 14px 8px; font-family:'Cormorant Garamond',serif;
+  font-size:15px; font-weight:600; letter-spacing:0.1em;
+  color:var(--gold); text-transform:uppercase;
+  border-top:1px solid var(--border); background:var(--cream);
+}
+tbody tr.dr { border-bottom:1px solid rgba(201,169,110,0.15); transition:background 0.2s; }
+tbody tr.dr:hover { background:rgba(201,169,110,0.06); }
+td { padding:13px 14px; vertical-align:middle; line-height:1.45; }
+.shade-cell { min-width:175px; display:flex; align-items:center; gap:12px; }
+.swatch { width:32px; height:32px; border-radius:50%; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.18); border:2px solid rgba(255,255,255,0.5); }
+.shade-info strong { display:block; font-weight:600; font-size:13px; color:var(--dark); }
+.shade-info span { font-size:11px; color:var(--mid); font-style:italic; }
+.hair-type { color:var(--mid); min-width:130px; font-size:12.5px; }
+.density-cell { text-align:center; min-width:80px; }
+.pip-row { display:flex; justify-content:center; gap:3px; }
+.pip { width:8px; height:8px; border-radius:50%; background:#D5C4B0; }
+.pip.f { background:var(--gold); }
+.result-cell { min-width:155px; }
+.r13 { background:var(--dev13-bg); padding:8px 12px; border-radius:6px; font-size:12px; }
+.r3  { background:var(--dev3-bg);  padding:8px 12px; border-radius:6px; font-size:12px; margin-top:6px; }
+.rl  { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; opacity:0.65; margin-bottom:3px; }
+.rt  { font-weight:400; color:var(--dark); }
+.rtm { font-size:10px; font-style:italic; color:var(--mid); margin-top:2px; }
+.tips-cell { font-size:12px; color:var(--mid); min-width:155px; font-style:italic; line-height:1.55; }
+.density-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:20px; padding-bottom:60px; }
+.density-card { background:#fff; border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+.density-card-header { background:var(--dark); padding:16px 20px; display:flex; align-items:center; gap:14px; }
+.density-icon { display:flex; gap:4px; align-items:center; }
+.density-icon .p { width:10px; height:10px; border-radius:50%; }
+.density-icon .p.on { background:var(--gold); }
+.density-icon .p.off { background:rgba(255,255,255,0.2); }
+.density-card-header h3 { font-family:'Cormorant Garamond',serif; font-size:18px; color:#fff; font-weight:400; letter-spacing:0.06em; }
+.density-card-header p { font-size:11px; color:var(--gold-light); font-weight:300; }
+.density-card-body { padding:18px 20px; }
+.density-row { display:flex; gap:10px; margin-bottom:12px; }
+.density-row:last-child { margin-bottom:0; }
+.density-shade-dot { width:26px; height:26px; border-radius:50%; flex-shrink:0; margin-top:2px; box-shadow:0 1px 4px rgba(0,0,0,0.15); }
+.density-row-info strong { font-size:13px; color:var(--dark); display:block; }
+.density-row-info p { font-size:12px; color:var(--mid); line-height:1.5; }
+.density-dev-pills { display:flex; gap:6px; margin-top:5px; flex-wrap:wrap; }
+.dpill { font-size:10px; padding:3px 8px; border-radius:12px; font-weight:600; letter-spacing:0.05em; }
+.dpill.d13 { background:var(--dev13-bg); color:var(--dev13-text); }
+.dpill.d3  { background:var(--dev3-bg);  color:var(--dev3-text); }
+.skin-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; padding-bottom:60px; }
+.skin-card { border-radius:12px; overflow:hidden; box-shadow:0 3px 16px rgba(0,0,0,0.08); border:1px solid var(--border); }
+.skin-card-top { padding:22px 20px 18px; display:flex; align-items:center; gap:16px; }
+.skin-orb { width:52px; height:52px; border-radius:50%; flex-shrink:0; box-shadow:0 2px 10px rgba(0,0,0,0.2); }
+.skin-card-top h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:400; letter-spacing:0.06em; }
+.skin-card-top p { font-size:11px; color:var(--mid); margin-top:3px; font-style:italic; }
+.skin-card-body { padding:0 20px 20px; }
+.skin-rec { display:flex; gap:10px; margin-bottom:10px; align-items:flex-start; }
+.skin-swatch-sm { width:22px; height:22px; border-radius:50%; flex-shrink:0; margin-top:2px; box-shadow:0 1px 4px rgba(0,0,0,0.15); }
+.skin-rec-text strong { font-size:12.5px; color:var(--dark); }
+.skin-rec-text span { font-size:12px; color:var(--mid); display:block; line-height:1.45; }
+.skin-avoid { background:#FDF3F0; border-left:3px solid #E8A090; border-radius:0 6px 6px 0; padding:10px 12px; font-size:12px; color:#7A3A30; margin-top:14px; line-height:1.5; }
+.skin-avoid strong { display:block; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:4px; }
+.blend-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:22px; padding-bottom:60px; }
+.blend-card { background:#fff; border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+.blend-card-header { background:var(--warm-white); padding:16px 20px; border-bottom:1px solid var(--border); }
+.blend-card-header h3 { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:600; color:var(--dark); }
+.blend-card-header p { font-size:11px; color:var(--mid); margin-top:3px; }
+.blend-formula { display:flex; align-items:center; gap:8px; padding:16px 20px 12px; flex-wrap:wrap; }
+.blend-swatch { width:30px; height:30px; border-radius:50%; box-shadow:0 1px 5px rgba(0,0,0,0.15); flex-shrink:0; }
+.blend-label { font-size:12px; font-weight:600; color:var(--dark); }
+.blend-plus { font-size:18px; color:var(--gold); font-weight:300; }
+.blend-arrow { font-size:16px; color:var(--mid); }
+.blend-result-swatch { width:36px; height:36px; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.18); }
+.blend-result-label { font-size:12px; font-weight:600; color:var(--dark); }
+.blend-body { padding:0 20px 18px; }
+.blend-row { margin-bottom:10px; }
+.blend-row-label { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:4px; }
+.blend-row p { font-size:12px; color:var(--mid); line-height:1.55; }
+.blend-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.btag { font-size:10px; padding:3px 9px; border-radius:12px; background:var(--warm-white); color:var(--mid); font-weight:500; }
+footer { background:var(--dark); color:var(--gold-light); text-align:center; padding:26px 24px; font-size:11px; letter-spacing:0.12em; font-weight:300; }
+footer strong { color:var(--gold); }
+.brand-footer {
+  background: #0e0b08; border-top: 1px solid rgba(201,169,110,0.4);
+  text-align:center; padding:16px 24px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gold); font-weight:400; font-style:italic;
+}
+@media(max-width:680px){ header { padding:36px 16px 28px; } .wrap { padding:0 12px; } .tab-btn { padding:12px 14px; font-size:10px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-ornament">
+    <div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line r"></div>
+  </div>
+  <h1>BRONSUN <span>Gel Dye</span></h1>
+  <p>Complete Professional Reference &nbsp;·&nbsp; Color Chart · Blending Guide · Skin Tone · Density</p>
+</header>
+<div class="how-to-bar">
+  <p><strong>How to use this guide:</strong> Start with <strong>Skin Tone</strong> to find compatible shades, then confirm your developer % and timing in the <strong>Color Chart</strong> based on hair color and density. Cross-reference the <strong>Density Guide</strong> to fine-tune processing time, and use the <strong>Blending Guide</strong> for custom formulas. Skin tone → shade → developer % → timing → blend.</p>
+</div>
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('chart')">Color Chart</button>
+  <button class="tab-btn" onclick="showTab('density')">Density Guide</button>
+  <button class="tab-btn" onclick="showTab('skintone')">Skin Tone</button>
+  <button class="tab-btn" onclick="showTab('blending')">Blending Guide</button>
+</div>
+<div class="legend">
+  <div class="legend-item"><span class="dev-badge dev-13">1.8%</span> Gentle · Soft result · Sensitive skin</div>
+  <div class="legend-item"><span class="dev-badge dev-3">3%</span> Strong · Intense · Resistant hair</div>
+</div>
+
+<div id="tab-chart" class="section active">
+<div class="wrap">
+  <h2 class="section-heading">Full <span>Color Chart</span></h2>
+  <p class="section-sub">All shades with 1.8% and 3% developer results across fine, medium, and full density brow hair.</p>
+  <div class="gold-rule"></div>
+</div>
+<div class="wrap table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Shade</th><th>Natural Hair Color</th><th>Density</th>
+      <th class="dev-header-13">1.8% — Result</th>
+      <th class="dev-header-3">3% — Result</th>
+      <th>Pro Tips</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="group-row"><td colspan="6">Dark Shades</td></tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="shade-info"><strong>#1 Deep Black</strong><span>Deep Black</span></div></div></td>
+      <td class="hair-type">Raven black, dark brunette, cold ash blonde</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip f"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Sparse–Full</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Soft charcoal-black; defined but not harsh.</div><div class="rtm">⏱ 10–15 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Jet black, intense and graphic. Maximum drama.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> Use 1.8% only<br><br><b>Medium:</b> Either developer<br><br><b>Full:</b> 3% recommended</div></td>
+      <td class="tips-cell">Primarily for lashes or dark brows. Mix into other shades to deepen. Avoid on fair skin alone.</td>
+    </tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="shade-info"><strong>#2 Graphite</strong><span>Graphite</span></div></div></td>
+      <td class="hair-type">Ash blonde, grey, salt & pepper</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Fine–Medium</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Ashy taupe-grey. Subtle, airy tint for grey or fair brows.</div><div class="rtm">⏱ 8–12 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Bold ashy charcoal. Cool-toned polished finish.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> 1.8% only — avoid 3%<br><br><b>Medium:</b> 3% great on salt & pepper<br><br><b>Full:</b> Mix with Chestnut to prevent flat grey</div></td>
+      <td class="tips-cell">Neutralises warm/yellow tones. Mix with Light Brown for ash blonde. Use alone on grey brows.</td>
+    </tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#2a2e3e,#0d0f1a)"></div><div class="shade-info"><strong>#3 Blue Black</strong><span>Blue Black</span></div></div></td>
+      <td class="hair-type">Raven/cool black hair, dark cool complexions</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip f"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Medium–Full</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Deep navy-tinted black; polished and cool.</div><div class="rtm">⏱ 10–15 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Intense blue-black; striking cool-toned brows.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> Not recommended<br><br><b>Medium:</b> 1.8% only<br><br><b>Full:</b> 3% for bold sculptural result</div></td>
+      <td class="tips-cell">Best for cool-undertone clients. Mix with Dark Brown to reduce blue and warm slightly.</td>
+    </tr>
+    <tr class="group-row"><td colspan="6">Brown Shades</td></tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="shade-info"><strong>#4 Chestnut</strong><span>Chestnut</span></div></div></td>
+      <td class="hair-type">Light brown, warm blonde, medium brown</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Sparse–Medium</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Soft neutral mid-brown. Great for first-time clients.</div><div class="rtm">⏱ 8–12 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Rich defined neutral-cool brown. Full coverage.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> 1.8% at 8 min<br><br><b>Medium:</b> Either developer<br><br><b>Full:</b> 3% at 15–20 min</div></td>
+      <td class="tips-cell">Most versatile all-rounder. No red tinge. Mix with Graphite for ashy or Red Chestnut for warmth.</td>
+    </tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="shade-info"><strong>#4.1 Red Chestnut</strong><span>Red Chestnut</span></div></div></td>
+      <td class="hair-type">Red/ginger, auburn, mahogany</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Fine–Medium</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Warm copper-tinted brown. Delicate red tone on fine brows.</div><div class="rtm">⏱ 8–10 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Fiery bold red-brown. Vivid warm intensity.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> 1.8% for rose-copper tint<br><br><b>Medium:</b> Both work; 3% richer<br><br><b>Full:</b> 3% with Brown #6 to avoid skin staining</div></td>
+      <td class="tips-cell">Mix with Light Brown for warm red-blonde. Mix with Chestnut for auburn. Great for redheads.</td>
+    </tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="shade-info"><strong>#6 Brown</strong><span>Brown</span></div></div></td>
+      <td class="hair-type">Dark blonde, light–medium brown</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip f"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Medium–Full</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Warm soft mid-brown. Natural everyday result.</div><div class="rtm">⏱ 10–14 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Rich defined warm brown. Full salon coverage.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> Blend with Light Brown first<br><br><b>Medium:</b> Either developer<br><br><b>Full:</b> 3%; mix with Dark Brown for depth</div></td>
+      <td class="tips-cell">Foundational warm brown. Pair with Chestnut for bespoke mid-brown. Mix with Graphite to cool down.</td>
+    </tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="shade-info"><strong>#7 Dark Brown</strong><span>Dark Brown</span></div></div></td>
+      <td class="hair-type">Dark brunette, near-black</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip f"></div><div class="pip f"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Medium–Full</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Deep cool-brown; defined but soft. Good for sensitive clients.</div><div class="rtm">⏱ 10–15 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Bold deep cool brown. Near-black depth.</div><div class="rtm">⏱ 15–20 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> Not ideal — use Chestnut instead<br><br><b>Medium:</b> 1.8% rich brown; 3% near-black<br><br><b>Full:</b> 3% only</div></td>
+      <td class="tips-cell">Use as deepening agent in blends. Mix with Brown for warm dark-brown. Mix with Graphite for cold espresso.</td>
+    </tr>
+    <tr class="group-row"><td colspan="6">Light Shades</td></tr>
+    <tr class="dr">
+      <td><div class="shade-cell"><div class="swatch" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="shade-info"><strong>#5 Light Brown</strong><span>Light Brown</span></div></div></td>
+      <td class="hair-type">Blonde, light blonde, platinum, very fine fair brows</td>
+      <td class="density-cell"><div class="pip-row"><div class="pip f"></div><div class="pip"></div><div class="pip"></div></div><div style="font-size:10px;color:var(--mid);margin-top:4px">Fine–Sparse</div></td>
+      <td class="result-cell"><div class="r13"><div class="rl">1.8%</div><div class="rt">Very soft golden-beige. Barely-there tint for platinum blondes.</div><div class="rtm">⏱ 6–10 min</div></div><div style="height:6px"></div><div class="r3"><div class="rl">3%</div><div class="rt">Warm golden-brown. Visible definition without heaviness.</div><div class="rtm">⏱ 12–18 min</div></div></td>
+      <td class="result-cell"><div style="font-size:12px;color:var(--mid);line-height:1.55"><b>Fine:</b> 1.8% at 6–8 min — ideal<br><br><b>Medium:</b> 3% at 12–15 min with Chestnut<br><br><b>Full:</b> Blend with Chestnut or Brown — too light alone</div></td>
+      <td class="tips-cell">The blonde specialist. Add Graphite to cool yellow tone. Add Dark Brown drop-by-drop to deepen.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div id="tab-density" class="section">
+<div class="wrap">
+  <h2 class="section-heading">Hair Density <span>Guide</span></h2>
+  <p class="section-sub">Developer choice and processing time should always be adjusted to match hair density.</p>
+  <div class="gold-rule"></div>
+  <div class="density-grid">
+    <div class="density-card">
+      <div class="density-card-header">
+        <div><div class="density-icon"><div class="p on"></div><div class="p off"></div><div class="p off"></div></div><h3>Fine / Sparse</h3><p>Thin individual hairs · Gaps visible · Over-plucked or naturally thin</p></div>
+      </div>
+      <div class="density-card-body">
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="density-row-info"><strong>#5 Light Brown</strong><p>Best choice for fine fair brows. Adds definition without weight.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 6–8 min</span><span class="dpill d3">3% · 10–12 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="density-row-info"><strong>#4 Chestnut</strong><p>Works on fine brown brows. Keep time short to avoid over-darkening.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 6–10 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="density-row-info"><strong>#2 Graphite</strong><p>For fine grey or ash-blonde brows — soft cool-toned definition.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 6–8 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="density-row-info"><strong>#4.1 Red Chestnut</strong><p>For fine red/ginger brows. Gives warm copper sheen.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 6–8 min</span></div></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid for Fine Brows</strong>#1 Deep Black, #3 Blue Black, #7 Dark Brown — too intense, will look drawn-on and stain skin heavily.</div>
+      </div>
+    </div>
+    <div class="density-card">
+      <div class="density-card-header">
+        <div><div class="density-icon"><div class="p on"></div><div class="p on"></div><div class="p off"></div></div><h3>Medium Density</h3><p>Average hair thickness · Defined shape · Some gaps possible</p></div>
+      </div>
+      <div class="density-card-body">
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="density-row-info"><strong>#4 Chestnut</strong><p>Ideal for medium brows in most natural shades. Very versatile.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 8–12 min</span><span class="dpill d3">3% · 12–18 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="density-row-info"><strong>#6 Brown</strong><p>Good for medium-warm brown brows. 3% gives polished result.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 10–14 min</span><span class="dpill d3">3% · 15–18 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="density-row-info"><strong>#1 Deep Black</strong><p>Use 1.8% on medium brows for strong defined look without harshness.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 10–15 min</span><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="density-row-info"><strong>#7 Dark Brown</strong><p>1.8% for rich dark brown. 3% for near-black depth.</p><div class="density-dev-pills"><span class="dpill d13">1.8% · 10–15 min</span><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+      </div>
+    </div>
+    <div class="density-card">
+      <div class="density-card-header">
+        <div><div class="density-icon"><div class="p on"></div><div class="p on"></div><div class="p on"></div></div><h3>Full / Dense</h3><p>Thick, coarse, or resistant hair · Full bushy brows</p></div>
+      </div>
+      <div class="density-card-body">
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="density-row-info"><strong>#7 Dark Brown</strong><p>Best for dense dark brows. 3% with full time to penetrate coarse hair.</p><div class="density-dev-pills"><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="density-row-info"><strong>#1 Deep Black</strong><p>Excellent on thick dark brows. 3% penetrates coarse hair fully.</p><div class="density-dev-pills"><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#2a2e3e,#0d0f1a)"></div><div class="density-row-info"><strong>#3 Blue Black</strong><p>For full cool-toned dark brows. Striking when fully processed.</p><div class="density-dev-pills"><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="density-row-info"><strong>#6 Brown</strong><p>On thick brown or dark blonde brows. Blend with Dark Brown for depth.</p><div class="density-dev-pills"><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+        <div class="density-row"><div class="density-shade-dot" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="density-row-info"><strong>#4.1 Red Chestnut</strong><p>For full auburn brows. Mix 1:1 with Brown #6 to manage skin staining.</p><div class="density-dev-pills"><span class="dpill d3">3% · 15–20 min</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="tab-skintone" class="section">
+<div class="wrap">
+  <h2 class="section-heading">Skin Tone <span>Recommendations</span></h2>
+  <p class="section-sub">Bronsun stains both brow hair and periorbital skin. Choose a shade that harmonises with the client's complexion.</p>
+  <div class="gold-rule"></div>
+  <div class="skin-grid">
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#F9F1EC"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#F8E4D5,#E8C8B4)"></div><div><h3>Fair / Porcelain</h3><p>Very light skin · Pink or neutral undertone</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="skin-rec-text"><strong>#5 Light Brown</strong><span>Ideal. Subtle definition without looking harsh on pale skin.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="skin-rec-text"><strong>#4 Chestnut</strong><span>Good for light brown brows. Use 1.8% for a soft finish.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="skin-rec-text"><strong>#2 Graphite</strong><span>For fair ashy blonde brows. Cool, editorial feel.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="skin-rec-text"><strong>#4.1 Red Chestnut</strong><span>For fair redheads only. Use 1.8% — looks natural.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid</strong>#1 Deep Black, #3 Blue Black — will look severe and stain skin darkly. If needed mix with Light Brown, 1.8% only.</div>
+      </div>
+    </div>
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#F5EBE0"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#EDD5BE,#D4A882)"></div><div><h3>Light / Ivory</h3><p>Light skin · Warm or neutral undertone</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="skin-rec-text"><strong>#4 Chestnut</strong><span>Perfect match — neutral-brown complements warm ivory tones.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="skin-rec-text"><strong>#6 Brown</strong><span>Warm brown looks natural on light warm skin.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="skin-rec-text"><strong>#5 Light Brown</strong><span>For blonde clients with light ivory skin. Very natural.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="skin-rec-text"><strong>#4.1 Red Chestnut</strong><span>For redheads or auburn hair. Harmonises with warm undertones.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Use With Care</strong>#1 Deep Black — can look too strong; mix with #4 Chestnut and use 1.8% only.</div>
+      </div>
+    </div>
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#EEE0CC"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#D4A96A,#B07840)"></div><div><h3>Medium / Olive</h3><p>Beige to olive · Warm or yellow-green undertones</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="skin-rec-text"><strong>#6 Brown</strong><span>Warm brown complements olive undertones perfectly.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="skin-rec-text"><strong>#7 Dark Brown</strong><span>Great for medium-dark olive skin. Intense and sophisticated.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="skin-rec-text"><strong>#4 Chestnut</strong><span>Soft option for lighter olive skin with naturally light brows.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="skin-rec-text"><strong>#1 Deep Black</strong><span>Works on deeper olive tones with dark natural brows. Use 1.8% unless brows are dense.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid</strong>#2 Graphite — looks ashy and washed out on warm olive skin. #5 Light Brown too light unless hair is naturally very fair.</div>
+      </div>
+    </div>
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#E0CEB5"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#C08850,#8A5825)"></div><div><h3>Medium-Dark / Tan</h3><p>Golden-tan skin · Warm undertone · South Asian, Latinx</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="skin-rec-text"><strong>#7 Dark Brown</strong><span>Harmonises with tan skin. Depth and warmth without starkness.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="skin-rec-text"><strong>#1 Deep Black</strong><span>Excellent on darker natural brows. Bold and well-framed result.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="skin-rec-text"><strong>#6 Brown</strong><span>Softer option for lighter tan clients with warm brows.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid</strong>#5 Light Brown and #4.1 Red Chestnut — will look too light and unnatural against deeper tan tones.</div>
+      </div>
+    </div>
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#C8A878"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#7A4820,#452210)"></div><div><h3>Dark / Deep</h3><p>Deep warm or cool brown skin · African, Afro-Caribbean, deeper South Asian</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="skin-rec-text"><strong>#1 Deep Black</strong><span>Top choice. Complements deep skin tones and dark brows naturally. 3% for full bold result.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#2a2e3e,#0d0f1a)"></div><div class="skin-rec-text"><strong>#3 Blue Black</strong><span>Striking on deep cool complexions. Adds cool depth to dark brows.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="skin-rec-text"><strong>#7 Dark Brown</strong><span>Good when a softer result than black is desired.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid</strong>#5 Light Brown, #4 Chestnut, #2 Graphite — will appear washed out against very deep skin.</div>
+      </div>
+    </div>
+    <div class="skin-card" style="background:#fff">
+      <div class="skin-card-top" style="background:#F0E4ED"><div class="skin-orb" style="background:radial-gradient(circle at 35% 35%,#E8BDD0,#C890A8)"></div><div><h3>Cool / Pink Undertone</h3><p>Pink or cool-rosy undertone · Any depth level</p></div></div>
+      <div class="skin-card-body">
+        <div style="height:14px"></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="skin-rec-text"><strong>#2 Graphite</strong><span>Cool-toned ash works harmoniously with pink undertones. Modern, editorial look.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="skin-rec-text"><strong>#4 Chestnut</strong><span>Neutral brown with no red — won't clash with cool-pink undertones.</span></div></div>
+        <div class="skin-rec"><div class="skin-swatch-sm" style="background:radial-gradient(circle at 35% 35%,#2a2e3e,#0d0f1a)"></div><div class="skin-rec-text"><strong>#3 Blue Black</strong><span>On cool-toned deeper skin. Blue undertone complements pink complexions.</span></div></div>
+        <div class="skin-avoid"><strong>⚠ Avoid</strong>#4.1 Red Chestnut and #6 Brown — warm/orange tones clash visibly with cool pink undertones.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="tab-blending" class="section">
+<div class="wrap">
+  <h2 class="section-heading">Custom <span>Blending Guide</span></h2>
+  <p class="section-sub">All Bronsun shades can be mixed together before adding developer. Mix dye shades first, then add developer.</p>
+  <div class="gold-rule"></div>
+  <div class="blend-grid">
+    <div class="blend-card"><div class="blend-card-header"><h3>Soft Ash Blonde</h3><p>For fair or blonde clients wanting cool, natural brows</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="blend-label">#5 Light Brown</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="blend-label">#2 Graphite</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#9BA898,#6A7268)"></div><div class="blend-result-label">Ash Blonde</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>3 parts #5 Light Brown : 1 part #2 Graphite</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for whispy ash. <b>3%</b> for defined ash-blonde.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Platinum, ash blonde or grey-blonde brow hair. Fair to light cool-toned skin.</p></div><div class="blend-tags"><span class="btag">Fair Skin</span><span class="btag">Blonde Hair</span><span class="btag">Cool Undertone</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Warm Golden Blonde</h3><p>Soft warmth for fair-warm or blonde clients</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#C8A97A,#9A7448)"></div><div class="blend-label">#5 Light Brown</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="blend-label">#4.1 Red Chestnut</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#C89050,#9A6030)"></div><div class="blend-result-label">Golden Blonde</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>4 parts #5 Light Brown : 1 part #4.1 Red Chestnut</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for honey-blonde shimmer. <b>3%</b> for warm gold definition.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Warm or strawberry blonde hair. Fair-warm or light ivory skin.</p></div><div class="blend-tags"><span class="btag">Fair–Light Skin</span><span class="btag">Warm Blonde</span><span class="btag">Strawberry Blonde</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Natural Auburn</h3><p>Rich warm red-brown — the redhead's perfect brow</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#A0522D,#6B2E12)"></div><div class="blend-label">#4.1 Red Chestnut</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="blend-label">#4 Chestnut</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#962E0E,#5C1A00)"></div><div class="blend-result-label">Auburn</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>2 parts #4.1 Red Chestnut : 1 part #4 Chestnut</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for warm copper-red. <b>3%</b> for vibrant defined auburn.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Red, auburn or warm chestnut hair. Light–medium or freckled skin.</p></div><div class="blend-tags"><span class="btag">Redheads</span><span class="btag">Auburn Hair</span><span class="btag">Light–Medium Skin</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Taupe / Mushroom Brown</h3><p>Cool greige — trending, sophisticated, very wearable</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#8B6249,#5C3D28)"></div><div class="blend-label">#4 Chestnut</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="blend-label">#2 Graphite</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#8A7A6A,#5C4E40)"></div><div class="blend-result-label">Taupe</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>2 parts #4 Chestnut : 1 part #2 Graphite</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for soft greige-taupe. <b>3%</b> for cool defined mushroom brown.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Ash-brown, dark blonde or grey-brown hair. Light–medium or cool-toned skin.</p></div><div class="blend-tags"><span class="btag">Cool Undertone</span><span class="btag">Ash Brown</span><span class="btag">Light–Medium Skin</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Espresso / Cool Dark</h3><p>Deep cool brown — the brunette alternative to black</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="blend-label">#7 Dark Brown</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#6e7070,#3a3c3c)"></div><div class="blend-label">#2 Graphite</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#2E2820,#181410)"></div><div class="blend-result-label">Espresso</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>3 parts #7 Dark Brown : 1 part #2 Graphite</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for deep rich brown. <b>3%</b> for near-black cold espresso.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Dark brunette or cool black hair. Medium to dark skin of any undertone.</p></div><div class="blend-tags"><span class="btag">Brunette</span><span class="btag">Medium–Dark Skin</span><span class="btag">Cool Undertone</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Warm Brunette</h3><p>Rich chocolate — classic, universally flattering</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#7B4F35,#4A2A12)"></div><div class="blend-label">#6 Brown</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="blend-label">#7 Dark Brown</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#5C3820,#301A08)"></div><div class="blend-result-label">Warm Brunette</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>1 part #6 Brown : 1 part #7 Dark Brown</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for warm dark-brown. <b>3%</b> for deep chocolate definition.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Medium-dark brown brows. Olive, tan or medium warm-toned skin.</p></div><div class="blend-tags"><span class="btag">Olive Skin</span><span class="btag">Warm Undertone</span><span class="btag">Dark Blonde–Brunette</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Soft Black</h3><p>Dark without the starkness — for dramatic brows on sensitive skin</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#0a0a0a)"></div><div class="blend-label">#1 Deep Black</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="blend-label">#7 Dark Brown</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#1E1614,#0A0806)"></div><div class="blend-result-label">Soft Black</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>1 part #1 Deep Black : 1 part #7 Dark Brown</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>1.8%</b> for dark brown-black with warmth. <b>3%</b> for near-black intensity.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Dark brunette or black hair. Medium to deep warm skin tones.</p></div><div class="blend-tags"><span class="btag">Dark Hair</span><span class="btag">Warm–Deep Skin</span><span class="btag">Medium–Full Density</span></div></div></div>
+    <div class="blend-card"><div class="blend-card-header"><h3>Cool Soft Black</h3><p>Blue-toned dark — modern and high-fashion</p></div><div class="blend-formula"><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#2a2e3e,#0d0f1a)"></div><div class="blend-label">#3 Blue Black</div><div class="blend-plus">+</div><div class="blend-swatch" style="background:radial-gradient(circle at 35% 35%,#4A3220,#2A1A0E)"></div><div class="blend-label">#7 Dark Brown</div><div class="blend-arrow">→</div><div class="blend-result-swatch" style="background:radial-gradient(circle at 35% 35%,#1A1C28,#08090F)"></div><div class="blend-result-label">Cool Black</div></div><div class="blend-body"><div class="blend-row"><div class="blend-row-label">Ratio</div><p>2 parts #3 Blue Black : 1 part #7 Dark Brown</p></div><div class="blend-row"><div class="blend-row-label">Developer</div><p><b>3% only</b> — needed for full colour deposit on dense dark hair.</p></div><div class="blend-row"><div class="blend-row-label">Best for</div><p>Cool-toned complexions. Black natural hair. Full density brows.</p></div><div class="blend-tags"><span class="btag">Cool Undertone</span><span class="btag">Dark Hair</span><span class="btag">Full Density</span></div></div></div>
+  </div>
+  <div style="background:var(--dark);border-radius:12px;padding:28px;margin-bottom:60px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);letter-spacing:0.1em;margin-bottom:16px">Blending Rules</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Mix Order</div><div style="font-size:12.5px;color:var(--gold-light);line-height:1.6">Always mix dye shades together first, then add developer. Never mix developer with one shade then add another dye.</div></div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Start Light</div><div style="font-size:12.5px;color:var(--gold-light);line-height:1.6">Add darker shades drop-by-drop. Easy to darken a blend but impossible to lighten once mixed.</div></div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Time Sensitivity</div><div style="font-size:12.5px;color:var(--gold-light);line-height:1.6">Once developer is added, use within 10 minutes. Never store after activation.</div></div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px"><div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Patch Test</div><div style="font-size:12.5px;color:var(--gold-light);line-height:1.6">Always perform a patch test 48hrs prior — applies to blended formulas too.</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <strong>BRONSUN PROFESSIONAL</strong> &nbsp;·&nbsp; For professional use only &nbsp;·&nbsp; Patch test 48hrs prior &nbsp;·&nbsp; Mix 1:1 ratio · Process up to 20 min
+</footer>
+<div class="brand-footer">Brows by Vanessa Tran</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>.tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
 .section { display:none; }
 .section.active { display:block; }
 .wrap { max-width:1100px; margin:0 auto; padding:0 24px; }
